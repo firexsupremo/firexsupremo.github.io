@@ -1,116 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrera de Clicks</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Document</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Carrera de Clicks</h1>
-        <label for="clickLimit">Elige el número de clics para ganar:</label>
-        <select id="clickLimit">
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="200">200</option>
-        </select>
-        <div class="game">
-            <div class="player" id="player1">
-                <h2>Jugador 1</h2>
-                <button id="btnPlayer1">Clic</button>
-                <p id="scorePlayer1">0</p>
-            </div>
-            <div class="player" id="player2">
-                <h2>Jugador 2</h2>
-                <button id="btnPlayer2">Clic</button>
-                <p id="scorePlayer2">0</p>
-            </div>
-        </div>
-        <p id="winner"></p>
-    </div>
+
+<body id="fondo">
+
+    <p id="textouno">un texto</p>
+    <p id="textodos">dos texto</p>
+    <p id="textotres">tres texto</p>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            margin-top: 50px;
-        }
-        .game {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 20px;
-        }
-        .player {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-        }
-        button {
-            background: #ffffff;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: transform 0.2s;
-            border-radius: 5px;
-        }
-        button:hover {
-            transform: scale(1.1);
-        }
-        #winner {
-            font-size: 24px;
-            margin-top: 20px;
-            font-weight: bold;
+        .rojo {
+            background: red;
         }
     </style>
 
-    <script>
-        let scorePlayer1 = 0;
-        let scorePlayer2 = 0;
-        const clickLimitSelect = document.getElementById("clickLimit");
-        const btnPlayer1 = document.getElementById("btnPlayer1");
-        const btnPlayer2 = document.getElementById("btnPlayer2");
-        const score1Display = document.getElementById("scorePlayer1");
-        const score2Display = document.getElementById("scorePlayer2");
-        const winnerDisplay = document.getElementById("winner");
+    <button onclick="cambio()">color</button>
+    <button onclick="textos()">textos</button>
 
-        function checkWinner() {
-            let limit = parseInt(clickLimitSelect.value);
-            if (scorePlayer1 >= limit) {
-                winnerDisplay.textContent = "¡Jugador 1 gana!";
-                disableButtons();
-            } else if (scorePlayer2 >= limit) {
-                winnerDisplay.textContent = "¡Jugador 2 gana!";
-                disableButtons();
-            }
-        }
+    <input type="number" id="Numero">
 
-        function disableButtons() {
-            btnPlayer1.disabled = true;
-            btnPlayer2.disabled = true;
-        }
+    <button onclick="VerificarN()">numero</button>
 
-        btnPlayer1.addEventListener("click", () => {
-            scorePlayer1++;
-            score1Display.textContent = scorePlayer1;
-            checkWinner();
-        });
+    <p id="datos"></p>
+    <button onclick="miobjeto()">objeto </button>
 
-        btnPlayer2.addEventListener("click", () => {
-            scorePlayer2++;
-            score2Display.textContent = scorePlayer2;
-            checkWinner();
-        });
-    </script>
+    <p id="resultado"></p>
+
+    <button onclick="lista()">mi lista </button>
+
+    <ul id="la-lista"></ul>
+
 </body>
+<script src=" script.js "></script>
+
 </html>
